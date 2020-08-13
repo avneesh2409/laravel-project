@@ -6,7 +6,12 @@ html, body {
     height: 100vh;
     margin: 0;
 }
-
+.exportSpan{
+    width:50px;
+    background:blue;
+    color:black;
+    cursor: pointer;
+}
 .full-height {
     height: 100vh;
 }

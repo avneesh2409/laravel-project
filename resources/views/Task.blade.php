@@ -1,7 +1,7 @@
 @extends("master")
 
 @section('content')
-<h1>Assign the task to the users</h1>
+<h1>Assign the task to the users</h1><a href="/download" id="export" class="exportSpan" >Export</a>
 <form action='' method='POST'>
     @csrf
 <h5>Select User </h5><select name="userid">
