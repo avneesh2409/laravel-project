@@ -1,8 +1,5 @@
 var check = false;
   $(document).ready(function(){
-    $("#export").on("click",function(e){
-      window.location.href = e.target.href;
-    });
         $("#email").on("input", function(){
             // Print entered value in a div box
             var x=$(this).val();
