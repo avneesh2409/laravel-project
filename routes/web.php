@@ -21,3 +21,5 @@ Route::get('/task','TaskController@index');
 
 Route::post('/user','UserController@create');
 Route::post('/task','TaskController@create');
+
+Route::get('/download','TaskController@export');
