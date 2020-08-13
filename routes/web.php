@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/user','UserController@index');
+Route::get('/task','TaskController@index');
+
+Route::post('/user','UserController@create');
+Route::post('/task','TaskController@create');
