@@ -27,25 +27,31 @@ class TaskController extends Controller
         }
     }
 
-    public function export()
+    public function export(Request $request)
     {
-        $headers = array(
-            "Content-type" => "text/csv",
-            "Content-Disposition" => "attachment; filename=file.csv"
-        );
-        $tasks = Task::all();
-        $columns = array('id', 'userid', 'name', 'type', 'Created');
+       $fileName = 'tasks.csv';
+       $tasks = Task::all();
     
-        $callback = function() use ($tasks, $columns)
-        {
-            $file = fopen('/excelFiles/output.csv', 'w');
-            fputcsv($file, $columns);
+            $headers = array(
+                "Content-type"        => "text/csv",
+                "Content-Disposition" => "attachment; filename=$fileName",
+                "Pragma"              => "no-cache",
+                "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+                "Expires"             => "0"
+            );
     
-            foreach($tasks as $task) {
-                fputcsv($file, array($task->id, $task->user_id, $task->name, $task->type, $task->created_at));          }
-            
+            $columns = array('id', 'user_id', 'task name', 'task type', 'created date');
+    
+            $callback = function(){
+                $file = fopen('/excelFiles/output', 'w');
+                fputcsv($file, $columns);
+                foreach ($tasks as $task) {   
+                    fputcsv($file, array($task->id, $task->user_id,$task->name, $task->type, $task->created_at));
+                }
+    
                 fclose($file);
-        };
-        return Response::stream($callback, 200, $headers);
-    }
+            };
+    
+            return response()->stream($callback, 200, $headers);
+        }
 }
