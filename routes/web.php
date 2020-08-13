@@ -23,3 +23,4 @@ Route::post('/user','UserController@create');
 Route::post('/task','TaskController@create');
 
 Route::get('/task/show','TaskController@show');
+Route::get('/user/show','UserController@show');

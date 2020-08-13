@@ -13,8 +13,8 @@ class TaskController extends Controller
         return view('Task',["users"=>$users]);
     }
     public function show(){
-        $user = User::all();
-        return view("showTask",["data"=>$user]);
+        $tasks = Task::all();
+        return view("showTask",["data"=>$tasks]);
     }
     public function create(Request $request){
         $data = $request->input();

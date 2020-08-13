@@ -1,7 +1,7 @@
 @extends("master")
 
 @section('content')
-<h1>All the tasks</h1><a href="/download" id="export" class="exportSpan" >Export Tasks to Excel file</a>
+<h1>All the Users</h1><a href="/download" id="export" class="exportSpan" >Export Users to Excel file</a>
 @if(isset($data))
     <table border="1" style="border-collapse:collapse">
     <thead>
@@ -18,8 +18,8 @@
         <tr>
         <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
-            <td>{{$item->type}}</td>
-            <td>{{$item->user_id}}</td>
+            <td>{{$item->email}}</td>
+            <td>{{$item->mobile}}</td>
             <td>{{$item->created_at}}</td>
         </tr>
         @endforeach

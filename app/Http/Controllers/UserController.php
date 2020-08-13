@@ -9,6 +9,10 @@ class UserController extends Controller
     public function index(){
         return view('User');
     }
+    public function show(){
+        $user = User::all();
+        return view("showUser",["data"=>$user]);
+    }
     public function create(Request $request){
         $data = $request->input();
         try{

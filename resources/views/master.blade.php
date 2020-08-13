@@ -22,6 +22,8 @@
                 <div class="top-right links">
                         <a href="/user">user</a>
                         <a href="/task">task</a>
+                        <a href="/task/show">show tasks</a>
+                        <a href="/user/show">show users</a>
                 </div>
             <div class="content">
                @yield("content")
