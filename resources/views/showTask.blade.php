@@ -1,9 +1,10 @@
 @extends("master")
 
 @section('content')
-<h1>All the tasks</h1><a href="/download" id="export" class="exportSpan" >Export Tasks to Excel file</a>
+<h1>All the tasks</h1><a href="{{ url('task/download/excel')}}" id="export" class="exportSpan" >Export Tasks to Excel file</a>
+<a href="{{ url('task/download/csv')}}" id="export" class="exportSpan" >Export Tasks to CSV file</a>
 @if(isset($data))
-    <table border="1" style="border-collapse:collapse">
+    <table border="1" style="border-collapse:collapse;padding:'10px'">
     <thead>
         <tr>
             <th>id</th>

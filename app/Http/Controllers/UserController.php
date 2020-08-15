@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\UserExport;
+use Redirect;
 
 class UserController extends Controller
 {
@@ -21,10 +24,20 @@ class UserController extends Controller
             $user->email = $data['email'];
             $user->mobile = $data['mobile'];
             $user->save();
-            return redirect('user')->with('status',"User Registered successfully");
+            // return redirect('user')->with('status',);
+            Redirect::to('user');
         }
         catch(Exception $e){
             return redirect('user')->with('status',"operation failed");
         }
+    }
+    public function exportExcel()
+    {
+      return Excel::download(new UserExport, 'userlist.xlsx');
+    }
+
+    public function exportCSV()
+    {
+      return Excel::download(new UserExport, 'userlist.csv');
     }
 }

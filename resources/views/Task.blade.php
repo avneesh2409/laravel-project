@@ -21,5 +21,5 @@
     </select><hr />
     <button type="submit" >submit</button>
 </form>
-
+    <h1>{{$status}}</h1>
 @endsection

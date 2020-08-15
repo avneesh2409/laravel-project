@@ -16,11 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/user','UserController@index');
-Route::get('/task','TaskController@index');
+Route::get('user','UserController@index');
+Route::get('task','TaskController@index');
 
-Route::post('/user','UserController@create');
-Route::post('/task','TaskController@create');
+Route::post('user','UserController@create');
+Route::post('task','TaskController@create');
 
-Route::get('/task/show','TaskController@show');
-Route::get('/user/show','UserController@show');
+Route::get('task/show','TaskController@show');
+Route::get('user/show','UserController@show');
+
+Route::get('task/download/excel','TaskController@exportExcel');
+Route::get('task/download/csv','TaskController@exportCSV');
+
+Route::get('user/download/excel','UserController@exportExcel');
+Route::get('user/download/csv','UserController@exportCSV');
