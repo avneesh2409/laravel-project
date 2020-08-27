@@ -20,6 +20,7 @@
                         <a href="/task">task</a>
                         <a href="/task/show">show tasks</a>
                         <a href="/user/show">show users</a>
+                        <a href="{{ route('employees') }}">Employees</a>
                 </div>
             <div class="content">
                @yield("content")

@@ -9,7 +9,19 @@ html, body {
 .full-height {
     height: 100vh;
 }
-
+.employeeTable{
+    padding:20px;
+    background:#ddd;
+}
+.employeeTable th,td{
+    padding:20px;
+}
+.employeeTable tr:hover td{
+    padding:25px;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
 .flex-center {
     align-items: center;
     display: flex;

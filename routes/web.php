@@ -30,3 +30,5 @@ Route::get('task/download/csv','TaskController@exportCSV');
 
 Route::get('user/download/excel','UserController@exportExcel');
 Route::get('user/download/csv','UserController@exportCSV');
+
+Route::get('/employees','EmployeeController@index')->name('employees');
